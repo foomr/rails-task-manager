@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <div>
+    <li>Title: <%= link_to task.title, task_path(task.id) %>
+    
+    <% if task.completed %> 
+    <i class="far fa-check-square"></i>
+    <% else %> <i class="far fa-square"></i>
+    </li>
+    </div>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new task", new_task_path %>
